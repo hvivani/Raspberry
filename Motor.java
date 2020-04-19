@@ -20,7 +20,7 @@ public class Motor {
      //   final GpioPinPwmOutput speedPin = gpio.provisionPwmOutputPin(RaspiPin.GPIO_23, "SPEED", 0); //Pi4J GPIO_23 is GPIO_13 //ENA
         final GpioPinPwmOutput speedPin = gpio.provisionPwmOutputPin(RaspiPin.GPIO_26, "SPEED", 0); //Pi4J GPIO_26 is GPIO_12 //ENA
 
-        int milliseconds=2000;
+        int milliseconds=5000;
      //   speedPin.setShutdownOptions(true); 
      //   motor.high();
         System.out.println("--> Engine ON");
@@ -28,7 +28,7 @@ public class Motor {
         forward.high();
         backward.low();
         System.out.println("--> Setting Speed");
-        speedPin.setPwm(400);
+        speedPin.setPwm(550);
         System.out.println("--> Engine Rotating Forward");
         Thread.sleep(milliseconds);
         forward.low();
@@ -37,7 +37,7 @@ public class Motor {
 
         backward.high();
         forward.low();
-        speedPin.setPwm(400);
+        speedPin.setPwm(550);
         System.out.println("--> Engine Rotating Backward");
         Thread.sleep(milliseconds);
 
